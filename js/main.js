@@ -17,3 +17,55 @@
     });
   });
 })();
+
+(function () {
+  var grid = document.querySelector(".skills-grid");
+  if (!grid) return;
+
+  var cards = grid.querySelectorAll(".skill-item");
+  if (!cards.length) return;
+
+  function closeAll() {
+    cards.forEach(function (c) {
+      c.classList.remove("is-expanded");
+      c.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  cards.forEach(function (card, index) {
+    var panel = card.querySelector(".skill-more");
+    if (!panel) return;
+
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-expanded", "false");
+    if (!panel.id) {
+      panel.id = "skill-more-" + (index + 1);
+    }
+    card.setAttribute("aria-controls", panel.id);
+
+    panel.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    card.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var wasOpen = card.classList.contains("is-expanded");
+      closeAll();
+      if (!wasOpen) {
+        card.classList.add("is-expanded");
+        card.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  document.addEventListener("click", function () {
+    closeAll();
+  });
+})();

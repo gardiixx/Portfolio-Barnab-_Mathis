@@ -298,6 +298,12 @@ main {
   align-items: start;
 }
 
+.skills-hint {
+  margin: -0.75rem 0 1.25rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 .skill-item {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -306,10 +312,22 @@ main {
   position: relative;
   z-index: 1;
   outline: none;
+  cursor: pointer;
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s ease,
     border-color 0.25s ease;
+}
+
+.skill-item.is-expanded {
+  transform: scale(1.045);
+  z-index: 5;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+  border-color: rgba(61, 158, 255, 0.35);
+}
+
+.skill-item.is-expanded .skill-more {
+  grid-template-rows: 1fr;
 }
 
 .skill-item h3 {
@@ -344,34 +362,15 @@ main {
   line-height: 1.55;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .skill-item:hover {
-    transform: scale(1.045);
-    z-index: 5;
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
-    border-color: rgba(61, 158, 255, 0.35);
-  }
-
-  .skill-item:hover .skill-more {
-    grid-template-rows: 1fr;
-  }
-}
-
 .skill-item:focus-visible {
   border-color: rgba(61, 158, 255, 0.55);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-.skill-item:focus-within .skill-more {
-  grid-template-rows: 1fr;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .skill-item:focus-within:not(:hover) {
-    transform: scale(1.02);
-    z-index: 4;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  }
+.skill-item.is-expanded:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--accent-soft),
+    0 18px 48px rgba(0, 0, 0, 0.42);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -383,11 +382,8 @@ main {
     transition: none;
   }
 
-  @media (hover: hover) and (pointer: fine) {
-    .skill-item:hover,
-    .skill-item:focus-within:not(:hover) {
-      transform: none;
-    }
+  .skill-item.is-expanded {
+    transform: none;
   }
 }
 
