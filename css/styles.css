@@ -419,13 +419,27 @@ main {
 }
 
 .prod-thumb {
-  height: 140px;
+  height: 160px;
+  overflow: hidden;
   background: linear-gradient(135deg, #1e3a5f, var(--bg));
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.prod-thumb img {
+  width: 100% !important;
+  height: 160px !important;
+  max-width: unset !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.skill-item .prod-thumb {
+  margin: -1rem -1.15rem 1rem -1.15rem;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .prod-body {
@@ -467,7 +481,7 @@ main {
   color: var(--text);
 }
 
-/* Page Études — Prochainement & photos d’établissements */
+/* Page Études — Prochainement & photos d'établissements */
 .prochainement-intro p:last-child {
   margin-bottom: 0;
 }
@@ -501,7 +515,6 @@ main {
   gap: 1.25rem;
 }
 
-/* Les 2 premières cartes (Condorcet) : colonne 1 et 2, ligne 1 */
 .etablissement-card:nth-child(1) {
   grid-column: 1;
   grid-row: 1;
@@ -512,7 +525,6 @@ main {
   grid-row: 1;
 }
 
-/* Saint-Luc : pleine largeur sur la ligne 2 */
 .etablissement-card:nth-child(3) {
   grid-column: 1 / -1;
   grid-row: 2;
@@ -528,7 +540,6 @@ main {
   flex-direction: column;
 }
 
-/* Les 2 cartes Condorcet */
 .etablissement-card:nth-child(1) .etablissement-photo,
 .etablissement-card:nth-child(2) .etablissement-photo {
   aspect-ratio: 4 / 3;
@@ -539,7 +550,6 @@ main {
   justify-content: center;
 }
 
-/* Saint-Luc : plus haute pour que le logo soit lisible */
 .etablissement-card:nth-child(3) .etablissement-photo {
   aspect-ratio: 16 / 6;
   background: #ffffff10;
@@ -549,24 +559,11 @@ main {
   justify-content: center;
 }
 
-/* TOUTES les images : contain pour ne pas rogner */
 .etablissement-photo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* ← clé du fix */
-  padding: 0.75rem;      /* légère marge pour ne pas coller aux bords */
-}
-
-.etablissement-photo {
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(145deg, #1a2540, var(--bg));
-  overflow: hidden;
-}
-
-.etablissement-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 0.75rem;
 }
 
 .etablissement-card figcaption {
@@ -594,7 +591,7 @@ body {
 
 /* Nav mobile */
 @media (max-width: 900px) {
-   .etablissements-grid {
+  .etablissements-grid {
     grid-template-columns: 1fr;
   }
 
@@ -604,6 +601,7 @@ body {
     grid-column: 1;
     grid-row: auto;
   }
+
   .nav-toggle {
     display: block;
   }
@@ -640,19 +638,4 @@ body {
     order: 3;
     width: 100%;
   }
-}
-
-.skill-item .prod-thumb {
-  margin: -1rem -1.15rem 1rem -1.15rem;
-  border-radius: var(--radius) var(--radius) 0 0;
-  height: 160px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1e3a5f, var(--bg));
-}
-
-.skill-item .prod-thumb img {
-  width: 100% !important;
-  height: 160px !important;
-  object-fit: cover !important;
-  display: block !important;
 }
