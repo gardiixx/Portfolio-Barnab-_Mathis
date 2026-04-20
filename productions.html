@@ -32,68 +32,127 @@
     <main>
       <h1 class="page-title">Productions</h1>
       <p class="page-subtitle">
-        Projets personnels, PPE, TP notables — ajoutez captures et liens vers dépôts ou démos.
+        Projets personnels, PPE, TP notables.
       </p>
       <p class="skills-hint">Cliquez sur une case pour l'agrandir et afficher plus de détails.</p>
 
       <div class="skills-grid">
 
+        <!-- === GPS TRACKER === -->
         <article class="skill-item" tabindex="0" role="button" aria-expanded="false">
-          <!-- Zone aperçu / capture -->
           <div class="prod-thumb">
-            <!-- Remplace par : <img src="assets/productions/mon-projet.png" alt="Aperçu projet" loading="lazy" /> -->
-            Aperçu / capture
+            <img src="assets/productions/gps-tracker.png" alt="Aperçu GPS Tracker" loading="lazy" />
           </div>
-          <h3>Titre du projet</h3>
+          <h3>GPS Tracker — LoRa</h3>
           <div class="skill-icons" aria-label="Technologies">
-            <!-- <img class="skill-icon" src="assets/skills/python-logo.png" alt="Python" loading="lazy" /> -->
+            <img class="skill-icon" src="assets/skills/cpp-logo.png" alt="C++" loading="lazy" />
+            <img class="skill-icon" src="assets/skills/python-logo.png" alt="Python" loading="lazy" />
           </div>
-          <p>Technologies utilisées, objectif principal du projet.</p>
+          <p>Tracker GPS longue portée pour l'analyse des performances de footballeurs — GPS, LoRa, Raspberry Pi, modems eByte E32.</p>
           <div class="skill-more">
             <div class="skill-more-inner">
               <p>
-                Description détaillée : contexte, ce que tu as réalisé, difficultés surmontées,
-                résultat obtenu. Ajoute un lien GitHub ou démo ici si besoin.
+                Projet réalisé en groupe de 4 étudiants BTS CIEL, à la demande du club de football
+                de <strong>Marly-lès-Compiègne</strong>, dans le but d'analyser et d'améliorer les
+                performances physiques des joueurs sur la durée (distance parcourue, vitesse, zones
+                de jeu).
+              </p>
+              <p>
+                <strong>Ma contribution :</strong> responsable de la partie embarquée et communication.
+                J'ai développé le firmware en <strong>C++</strong> pour récupérer les trames NMEA du
+                module GPS, extraire les données pertinentes (position, vitesse, cap) et les encoder
+                en format polaire avant émission. J'ai étudié les normes GPS (NMEA 0183) pour
+                interpréter correctement chaque trame, câblé les composants et utilisé un
+                <strong>oscilloscope</strong> pour diagnostiquer les erreurs d'envoi sur le bus série.
+              </p>
+              <p>
+                La communication sans fil utilise des modems <strong>eByte E32</strong> (LoRa 433 MHz),
+                offrant une portée théorique de <strong>10 km</strong>. J'ai coordonné avec le
+                responsable Raspberry Pi pour aligner les fréquences, vérifier l'intégrité des
+                données reçues et anticiper les pertes de trames. J'ai également échangé avec le
+                binôme chargé de l'analyse pour définir précisément les données à transmettre et
+                leur format.
+              </p>
+              <p>
+                <a href="https://github.com/orgs/ir-esc/projects/4" target="_blank" rel="noopener">
+                  → Voir le projet sur GitHub
+                </a>
               </p>
             </div>
           </div>
         </article>
 
+        <!-- === VEILLE TECHNOLOGIQUE === -->
         <article class="skill-item" tabindex="0" role="button" aria-expanded="false">
           <div class="prod-thumb">
-            <!-- <img src="assets/productions/veille.png" alt="Aperçu veille" loading="lazy" /> -->
-            Aperçu / capture
+            <img src="assets/productions/veille.png" alt="Aperçu veille cybersécurité" loading="lazy" />
           </div>
-          <h3>Veille technologique</h3>
+          <h3>Veille — Cybersécurité</h3>
           <div class="skill-icons" aria-label="Technologies">
-            <!-- <img class="skill-icon" src="assets/skills/..." alt="..." loading="lazy" /> -->
+            <!-- icône optionnelle -->
           </div>
-          <p>Résumé de ta veille, thème traité, sources utilisées.</p>
+          <p>Veille technologique sur les cybermenaces actuelles : ransomwares, attaques d'infrastructure et bonnes pratiques de défense.</p>
           <div class="skill-more">
             <div class="skill-more-inner">
               <p>
-                Détails sur la méthodologie de veille, les outils de curation utilisés,
-                les conclusions tirées et le lien vers ta présentation ou article.
+                Cette veille porte sur l'évolution du paysage des cybermenaces en 2024-2025.
+                Elle s'appuie sur des sources spécialisées (ANSSI, CERT-FR, Bleeping Computer,
+                The Hacker News) et couvre notamment :
+              </p>
+              <p>
+                <strong>Les ransomwares-as-a-service (RaaS)</strong> : groupes comme LockBit 3.0 ou
+                BlackCat/ALPHV qui ont ciblé des hôpitaux, collectivités et PME françaises, causant
+                des interruptions de service critiques. L'attaque contre le <strong>Centre Hospitalier
+                d'Armentières</strong> (février 2024) illustre la vulnérabilité des infrastructures
+                publiques.
+              </p>
+              <p>
+                <strong>Les attaques par supply chain</strong> : compromission de dépendances
+                logicielles (ex. XZ Utils backdoor, mars 2024) montrant que la menace peut venir
+                de composants open source de confiance.
+              </p>
+              <p>
+                <strong>Bonnes pratiques défensives</strong> : segmentation réseau, mise à jour
+                systématique, MFA, sauvegardes hors-ligne et sensibilisation des utilisateurs —
+                autant de mesures étudiées en BTS et applicables dès le niveau PME.
               </p>
             </div>
           </div>
         </article>
 
+        <!-- === VPN PERSONNEL === -->
         <article class="skill-item" tabindex="0" role="button" aria-expanded="false">
           <div class="prod-thumb">
-            <!-- <img src="assets/productions/autre.png" alt="Aperçu réalisation" loading="lazy" /> -->
-            Aperçu / capture
+            <img src="assets/productions/vpn.png" alt="Aperçu VPN personnel" loading="lazy" />
           </div>
-          <h3>Autre réalisation</h3>
+          <h3>VPN personnel — WireGuard</h3>
           <div class="skill-icons" aria-label="Technologies">
-            <!-- <img class="skill-icon" src="assets/skills/..." alt="..." loading="lazy" /> -->
+            <!-- icône optionnelle -->
           </div>
-          <p>Description courte de la réalisation.</p>
+          <p>Déploiement d'un VPN auto-hébergé sur VPS avec WireGuard — chiffrement de bout en bout, confidentialité totale.</p>
           <div class="skill-more">
             <div class="skill-more-inner">
               <p>
-                Description détaillée, technologies impliquées, apprentissages clés
-                et résultats obtenus.
+                Dans une démarche d'apprentissage et de maîtrise de ma vie privée numérique,
+                j'ai déployé un <strong>VPN auto-hébergé</strong> basé sur <strong>WireGuard</strong>
+                sur un VPS Linux (Ubuntu Server). L'objectif : chiffrer l'intégralité de mon trafic
+                internet et ne dépendre d'aucun fournisseur commercial.
+              </p>
+              <p>
+                <strong>Étapes réalisées :</strong> provisionnement du serveur, installation et
+                configuration de WireGuard (génération des paires de clés publique/privée,
+                configuration des interfaces <code>wg0</code>), mise en place des règles
+                <strong>iptables</strong> pour le routage et le NAT, activation du
+                <em>IP forwarding</em> côté serveur, puis configuration du client sur ma machine
+                macOS.
+              </p>
+              <p>
+                <strong>Ce que j'ai appris :</strong> fonctionnement du protocole WireGuard
+                (UDP, cryptographie Curve25519/ChaCha20), gestion des interfaces réseau sous Linux,
+                diagnostic de connectivité (<code>ping</code>, <code>wg show</code>,
+                <code>tcpdump</code>), et sécurisation du serveur (fail2ban, désactivation de
+                l'accès root SSH, port non standard). Ce projet m'a donné une vision concrète
+                des enjeux de confidentialité et d'administration système.
               </p>
             </div>
           </div>
